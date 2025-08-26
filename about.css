@@ -1,0 +1,209 @@
+/* Theme colors */
+:root {
+	--bg-900: #0d0d10;
+	--accent: rgba(239,62,82,0.5);
+	--muted: #9aa3ab;
+}
+
+body.bg-dark-900 { background-color: var(--bg-900); }
+
+/* Smooth global transitions */
+* { transition: color .2s ease, background-color .2s ease, border-color .2s ease; }
+
+/* Navbar brand box */
+.logo-box {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	width: 36px;
+	height: 36px;
+	border-radius: .5rem;
+	background: linear-gradient(135deg, var(--accent), #9b1d2a);
+	color: #fff;
+	font-weight: 900;
+}
+
+/* Hero header with dotted background */
+.hero-header {
+	background: linear-gradient(180deg, rgba(13,13,16,0.8), rgba(13,13,16,0.95));
+	min-height: 40vh;
+	display: flex;
+	align-items: center;
+}
+
+.dots-bg {
+	position: absolute;
+	inset: 0;
+	background-image: radial-gradient(rgba(255,255,255,0.06) 1px, transparent 1px);
+	background-size: 22px 22px;
+	opacity: .5;
+	animation: pulse 6s ease-in-out infinite;
+	pointer-events: none;
+}
+
+@keyframes pulse {
+	0%, 100% { opacity: .35; }
+	50% { opacity: .6; }
+}
+
+/* Social rail */
+.social-rail { 
+	animation: floatY 6s ease-in-out infinite;
+	opacity: 0;
+	transform: translateX(-20px);
+	top: 20% !important;
+}
+.social-rail.fade-in { 
+	opacity: 1; 
+	transform: translateX(0);
+	transition: opacity .8s ease, transform .8s ease;
+}
+
+.social-link-vertical {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: .5rem;
+	color: #9aa3ab;
+	text-decoration: none;
+	font-size: .85rem;
+	font-weight: 500;
+	letter-spacing: .08em;
+	text-transform: uppercase;
+	transition: color .2s ease, transform .2s ease;
+}
+.social-link-vertical i { 
+	color: var(--accent); 
+	font-size: 1.1rem;
+	transition: transform .2s ease;
+}
+.social-link-vertical:hover { 
+	color: #fff; 
+	transform: translateX(4px);
+}
+.social-link-vertical:hover i { 
+	transform: scale(1.15);
+}
+
+/* Floating animation for social rail */
+@keyframes floatY { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-6px); } }
+
+/* Portrait card */
+.portrait-card img {
+	object-fit: cover;
+	border: 3px solid rgba(239,62,82,0.3);
+	transition: transform .3s ease, border-color .3s ease;
+}
+.portrait-card img:hover {
+	transform: scale(1.05);
+	border-color: var(--accent);
+}
+
+/* Education icons */
+.education-icon {
+	width: 48px;
+	height: 48px;
+	background: rgba(239,62,82,0.1);
+	border-radius: 50%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-shrink: 0;
+}
+.education-icon i {
+	font-size: 1.5rem;
+}
+
+/* Reveal animations */
+[data-reveal] { 
+	opacity: 0; 
+	transform: translateY(20px); 
+	transition: opacity .6s ease, transform .6s ease; 
+}
+[data-reveal].is-visible { 
+	opacity: 1; 
+	transform: translateY(0); 
+}
+
+.fade-in { 
+	opacity: 0; 
+	transform: translateY(10px); 
+	transition: opacity .8s ease, transform .8s ease; 
+}
+
+/* Footer styles */
+.footer-section {
+	background: linear-gradient(180deg, rgba(13,13,16,0.8), rgba(13,13,16,0.95));
+	border-top: 1px solid rgba(255,255,255,0.06);
+	backdrop-filter: blur(8px);
+	opacity: 0;
+	transform: translateY(30px);
+	transition: opacity .8s ease, transform .8s ease;
+}
+.footer-section.footer-animate {
+	opacity: 1;
+	transform: translateY(0);
+}
+
+.footer-social-link {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	width: 44px;
+	height: 44px;
+	border: 1px solid rgba(255,255,255,0.12);
+	border-radius: .5rem;
+	color: #9aa3ab;
+	text-decoration: none;
+	transition: all .25s ease;
+	background: rgba(255,255,255,0.02);
+}
+.footer-social-link i {
+	font-size: 1.1rem;
+	color: var(--accent);
+	transition: transform .25s ease;
+}
+.footer-social-link:hover {
+	border-color: var(--accent);
+	background: rgba(239,62,82,0.08);
+	color: #fff;
+	transform: translateY(-2px);
+}
+.footer-social-link:hover i {
+	transform: scale(1.15);
+}
+
+.footer-links li {
+	margin-bottom: .75rem;
+}
+.footer-links a {
+	text-decoration: none;
+	transition: color .2s ease;
+}
+.footer-links a:hover {
+	color: var(--accent) !important;
+}
+
+.footer-border {
+	height: 1px;
+	background: linear-gradient(90deg, transparent, rgba(239,62,82,0.3), transparent);
+}
+
+/* Navbar on scroll */
+#siteNav.scrolled { 
+	background-color: rgba(13,13,16,0.8) !important; 
+	backdrop-filter: blur(6px); 
+	border-bottom: 1px solid rgba(255,255,255,0.06); 
+}
+
+/* Responsive adjustments */
+@media (max-width: 991.98px) {
+	.hero-header {
+		min-height: 30vh;
+	}
+	.portrait-card img {
+		width: 150px;
+		height: 150px;
+	}
+}
+

@@ -1,0 +1,89 @@
+/* Minimal page-specific styles matching global theme */
+
+/* Dotted grid bg reuse */
+.hero-header .dots-bg {
+	background-image: radial-gradient(rgba(255,255,255,0.06) 1px, transparent 1px);
+	background-size: 18px 18px;
+	opacity: .35;
+	animation: pulse 6s ease-in-out infinite;
+}
+
+/* Card hover glow + scale */
+.skill-card {
+	transition: transform .25s ease, border-color .25s ease, box-shadow .25s ease;
+    height: 100%;
+}
+
+.skill-card:hover {
+	transform: translateY(-4px) scale(1.02);
+	border-color: rgba(239, 62, 82, 0.6) !important;
+	box-shadow: 0 8px 24px rgba(239, 62, 82, 0.15);
+}
+
+/* Reveal on scroll uses global [data-reveal] in styles.css */
+
+/* Looping shine animation on Skills heading */
+.shine-text {
+	position: relative;
+	display: inline-block;
+	background: linear-gradient(90deg, #fff 0%, #fff 40%, #ef3e52 50%, #fff 60%, #fff 100%);
+	background-size: 300% 100%;
+	-webkit-background-clip: text;
+	background-clip: text;
+	color: transparent;
+	animation: shine-sweep 4s linear infinite;
+}
+
+@keyframes shine-sweep {
+	0% { background-position: 200% 0; }
+	100% { background-position: -200% 0; }
+}
+
+/* Certificate placeholder */
+.cert-thumb {
+	width: 100%;
+	height: clamp(140px, 22vw, 180px);
+	border: 1px dashed rgba(239,62,82,0.35);
+	border-radius: .5rem;
+	background: rgba(239,62,82,0.05);
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+	position: relative;
+	transition: all .25s ease;
+}
+
+@media (max-width: 576px) {
+	.skill-card { padding: 1rem !important; }
+	.card h6 { font-size: .95rem; line-height: 1.3; }
+}
+
+/* Improve long titles wrapping on small screens */
+.card h6 { word-break: break-word; }
+
+/* Force single column for certs grid on phones/tablets */
+@media (max-width: 991.98px) {
+	.certs-grid { --bs-gutter-x: 1rem; }
+	.certs-grid > [class^="col"],
+	.certs-grid > [class*=" col"] {
+		flex: 0 0 100% !important;
+		max-width: 100% !important;
+	}
+}
+
+.cert-thumb::after {
+	content: 'Add certificate image';
+	position: absolute;
+	top: 50%; left: 50%; transform: translate(-50%, -50%);
+	color: #9aa3ab; font-size: .9rem;
+}
+
+.cert-card.has-image .cert-thumb::after { content: ''; }
+
+.cert-card:hover .cert-thumb {
+	border-color: var(--accent);
+	box-shadow: 0 6px 18px rgba(239,62,82,.15);
+	transform: translateY(-2px);
+}
+
+

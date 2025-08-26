@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Projects & Experience | Mohamed Ahmed Fekry</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;900&display=swap" rel="stylesheet" />
+
+    <!-- Global + Page styles -->
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="projects.css" />
+    <!-- Favicon -->
+    <link rel="icon" href="mf-favicon.svg" type="image/svg+xml" />
+  </head>
+
+  <body class="bg-dark-900 text-light" style="font-family: 'Inter', sans-serif">
+    <!-- Navbar -->
+    <nav id="siteNav" class="navbar navbar-expand-lg navbar-dark bg-transparent fixed-top">
+      <div class="container">
+        <a class="navbar-brand fw-black d-flex align-items-center gap-2" href="index.html">
+          <span class="logo-box">MF</span>
+          <span class="d-none d-sm-inline">Mohamed Ahmed Fekry</span>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="mainNav">
+          <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-3">
+            <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+            <li class="nav-item"><a class="nav-link" href="skills.html">Skills</a></li>
+            <li class="nav-item"><a class="nav-link active" href="projects.html">Projects</a></li>
+            <li class="nav-item"><a class="btn btn-danger rounded-3 px-3" href="#footer-contact">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Social Links -->
+    <div class="position-fixed start-0 top-50 translate-middle-y z-3 d-none d-md-flex flex-column gap-3 ps-2 social-rail">
+      <a class="social-link-vertical" href="https://www.linkedin.com/in/mohamed-ahmed-fekry" target="_blank" rel="noreferrer">
+        <i class="bi bi-linkedin"></i>
+        <span>LINKEDIN</span>
+      </a>
+      <a class="social-link-vertical" href="mailto:mohamedahmedfekry2003@gmail.com">
+        <i class="bi bi-envelope"></i>
+        <span>EMAIL</span>
+      </a>
+      <a class="social-link-vertical" href="tel:+201002113972">
+        <i class="bi bi-telephone"></i>
+        <span>PHONE</span>
+      </a>
+      <a class="social-link-vertical" href="https://github.com/" target="_blank" rel="noreferrer">
+        <i class="bi bi-github"></i>
+        <span>GITHUB</span>
+      </a>
+    </div>
+
+    <!-- Hero Header -->
+    <section class="hero-header position-relative py-5">
+      <div class="dots-bg position-absolute top-0 bottom-0 start-0 end-0 parallax-el" data-parallax="0.08"></div>
+      <div class="container position-relative" style="padding-top: 6rem;">
+        <div class="row justify-content-center">
+          <div class="col-lg-8 text-center">
+            <h1 class="display-4 fw-black text-uppercase mb-2 fade-in parallax-el hero-title" data-parallax="0.15">
+              <span class="word w1">Projects</span>
+              <span class="amp text-danger">&amp;</span>
+              <span class="word w2">Experience</span>
+            </h1>
+            <p class="text-secondary parallax-el" data-parallax="0.2">Cybersecurity Engineer | Penetration Tester</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Certificate Modal (projects) -->
+    <div class="modal fade" id="projCertModal" tabindex="-1" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content bg-dark border-secondary-subtle rounded-4">
+          <div class="modal-header border-0">
+            <h5 class="modal-title text-white">Certificate</h5>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <div class="ratio ratio-16x9">
+              <img id="projCertPreview" src="" alt="Certificate" class="w-100 h-100 object-fit-contain rounded-3" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Project Image Modal -->
+    <div class="modal fade" id="projImageModal" tabindex="-1" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content bg-dark border-secondary-subtle rounded-4">
+          <div class="modal-header border-0">
+            <h5 class="modal-title text-white" id="projImageTitle">Preview</h5>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <div class="ratio ratio-16x9">
+              <img id="projImagePreview" src="" alt="Preview" class="w-100 h-100 object-fit-contain rounded-3" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Training & Bootcamp -->
+    <section class="py-5">
+      <div class="container">
+        <div class="row mb-4" data-reveal>
+          <div class="col-12">
+            <h2 class="display-6 fw-bold mb-3">Training & Bootcamp</h2>
+            <div class="underline-animate mb-2"></div>
+          </div>
+        </div>
+
+        <div class="col-lg-10 col-xl-9 mx-auto">
+          <!-- 1 -->
+          <div class="card card-body bg-dark border-secondary-subtle rounded-4 shadow-sm mb-3 training-card" data-reveal>
+            <div class="d-flex flex-column gap-2">
+              <h5 class="mb-1 text-danger fw-bold">Digital Egypt Pioneers Initiative (DEPI) Round 2</h5>
+              <div class="text-secondary">Infrastructure and Security – Vulnerability Analyst / Penetration Tester</div>
+              <div class="text-secondary small"><i class="bi bi-calendar-event me-2"></i>Oct 2024 – May 2025</div>
+              <div><button class="btn btn-outline-danger btn-sm btn-view-cert" data-cert="Digital Egypt Pioneers Initiative (DEPI) Round 2.jpg">View Certificate</button></div>
+            </div>
+          </div>
+          <!-- 2 -->
+          <div class="card card-body bg-dark border-secondary-subtle rounded-4 shadow-sm mb-3 training-card" data-reveal>
+            <div class="d-flex flex-column gap-2">
+              <h5 class="mb-1 text-danger fw-bold">ND Universities Online – Cisco Networking Academy</h5>
+              <div class="text-secondary">Ethical Hacking</div>
+              <div class="text-secondary small"><i class="bi bi-calendar-event me-2"></i>Dec 2024 – Feb 2025</div>
+              <div><button class="btn btn-outline-danger btn-sm btn-view-cert" data-cert="ND Universities Online – Cisco Networking Academy.jpg">View Certificate</button></div>
+            </div>
+          </div>
+          <!-- 3 -->
+          <div class="card card-body bg-dark border-secondary-subtle rounded-4 shadow-sm mb-3 training-card" data-reveal>
+            <div class="d-flex flex-column gap-2">
+              <h5 class="mb-1 text-danger fw-bold">National Authority for Remote Sensing & Space Sciences (NARSS)</h5>
+              <div class="text-secondary">Web Development</div>
+              <div class="text-secondary small"><i class="bi bi-calendar-event me-2"></i>Oct 2024 – Dec 2024</div>
+              <div><button class="btn btn-outline-danger btn-sm btn-view-cert" data-cert="National Authority for Remote Sensing & Space Sciences (NARSS).jpg">View Certificate</button></div>
+            </div>
+          </div>
+          <!-- 4 -->
+          <div class="card card-body bg-dark border-secondary-subtle rounded-4 shadow-sm mb-3 training-card" data-reveal>
+            <div class="d-flex flex-column gap-2">
+              <h5 class="mb-1 text-danger fw-bold">We Innovate Academy (NTRA, ITI, Zero$ploit)</h5>
+              <div class="text-secondary">Governance, Risk, and Compliance (GRC)</div>
+              <div class="text-secondary small"><i class="bi bi-calendar-event me-2"></i>Jul 2024 – Sep 2024</div>
+              <div><button class="btn btn-outline-danger btn-sm btn-view-cert" data-cert="We Innovate Academy (NTRA, ITI, Zero$ploit).jpg">View Certificate</button></div>
+            </div>
+          </div>
+          <!-- 5 -->
+          <div class="card card-body bg-dark border-secondary-subtle rounded-4 shadow-sm mb-3 training-card" data-reveal>
+            <div class="d-flex flex-column gap-2">
+              <h5 class="mb-1 text-danger fw-bold">Military Production Information Systems Company (MPISC)</h5>
+              <div class="text-secondary">Cybersecurity / Network (CCNA 200-301)</div>
+              <div class="text-secondary small"><i class="bi bi-calendar-event me-2"></i>Jul 2024 – Aug 2024</div>
+              <div><button class="btn btn-outline-danger btn-sm btn-view-cert" data-cert="">View Certificate</button></div>
+            </div>
+          </div>
+          <!-- 6 -->
+          <div class="card card-body bg-dark border-secondary-subtle rounded-4 shadow-sm mb-3 training-card" data-reveal>
+            <div class="d-flex flex-column gap-2">
+              <h5 class="mb-1 text-danger fw-bold">Information Technology Institute (ITI)</h5>
+              <div class="text-secondary">Computer Network Fundamentals / Advanced Network / Cybersecurity Essentials</div>
+              <div class="text-secondary small"><i class="bi bi-calendar-event me-2"></i>Apr 2023 – May 2023</div>
+              <div><button class="btn btn-outline-danger btn-sm btn-view-cert" data-cert="Information Technology Institute (ITI).jpg">View Certificate</button></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Achievements & Projects -->
+    <section class="py-4 py-lg-5">
+      <div class="container">
+        <div class="row mb-4" data-reveal>
+          <div class="col-12">
+            <h2 class="display-6 fw-bold mb-3">Achievements & Projects</h2>
+            <div class="underline-animate mb-2"></div>
+          </div>
+        </div>
+
+        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+          <!-- Project 1 -->
+          <div class="col" data-reveal>
+            <div class="card bg-dark border border-secondary-subtle shadow-sm rounded-4 project-card h-100">
+              <div class="project-thumb ratio ratio-16x9">
+                <img src="Green Vision Project – Top 5 Finalist (AppX’25 Competition).jpg" alt="Green Vision Project" class="thumb-img" data-title="Green Vision Project – Top 5 Finalist (AppX’25 Competition)" />
+              </div>
+              <div class="card-body">
+                <h5 class="text-danger fw-bold">Green Vision Project – Top 5 Finalist (AppX’25 Competition)</h5>
+                <p class="text-secondary mb-3">AI-powered solution using satellite imagery & NDVI to combat desertification and optimize reforestation. <em>Achievement:</em> Top 5 finalist by IEEE Zewail City.</p>
+                <div class="d-flex flex-wrap gap-2 small">
+                  <span class="badge bg-danger bg-opacity-25 text-danger">AI</span>
+                  <span class="badge bg-danger bg-opacity-25 text-danger">NDVI</span>
+                  <span class="badge bg-danger bg-opacity-25 text-danger">Remote Sensing</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Project 2 -->
+          <div class="col" data-reveal>
+            <div class="card bg-dark border border-secondary-subtle shadow-sm rounded-4 project-card h-100">
+              <div class="project-thumb ratio ratio-16x9">
+                <img src="NASA International Space Apps Challenge 2024 – 8th Place.jpg" alt="NASA Space Apps 2024 – 8th Place" class="thumb-img" data-title="NASA International Space Apps Challenge 2024 – 8th Place" />
+              </div>
+              <div class="card-body">
+                <h5 class="text-danger fw-bold">NASA International Space Apps Challenge 2024 – 8th Place</h5>
+                <p class="text-secondary mb-3">Built an interactive web app simulating space experiments for immersive learning. <em>Achievement:</em> Ranked 8th worldwide.</p>
+                <div class="d-flex flex-wrap gap-2 small">
+                  <span class="badge bg-danger bg-opacity-25 text-danger">Web App</span>
+                  <span class="badge bg-danger bg-opacity-25 text-danger">Space</span>
+                  <span class="badge bg-danger bg-opacity-25 text-danger">Education</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Project 3 -->
+          <div class="col" data-reveal>
+            <div class="card bg-dark border border-secondary-subtle shadow-sm rounded-4 project-card h-100">
+              <div class="project-thumb ratio ratio-16x9">
+                <img src="Second-Year Project – Cyber Learning.png" alt="Second-Year Project – Cyber Learning" class="thumb-img" data-title="Second-Year Project – Cyber Learning" />
+              </div>
+              <div class="card-body">
+                <h5 class="text-danger fw-bold">Second-Year Project – Cyber Learning</h5>
+                <p class="text-secondary mb-3">Developed an innovative application integrating AI + Cybersecurity for advanced SOC operations (Network Detection, Malware Detection, URL Detection).</p>
+                <div class="d-flex flex-wrap gap-2 small">
+                  <span class="badge bg-danger bg-opacity-25 text-danger">AI</span>
+                  <span class="badge bg-danger bg-opacity-25 text-danger">Cybersecurity</span>
+                  <span class="badge bg-danger bg-opacity-25 text-danger">SOC</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Bottom controls -->
+    <div class="position-fixed bottom-0 start-0 ps-3 pb-3 d-none d-md-flex gap-2 z-3 hero-controls">
+      <button class="btn btn-outline-light btn-square" aria-label="Previous" onclick="window.location.href='skills.html'">
+        <i class="bi bi-caret-left-fill"></i>
+      </button>
+      <button class="btn btn-outline-light btn-square" aria-label="Pause">
+        <i class="bi bi-pause"></i>
+      </button>
+      <button class="btn btn-outline-light btn-square" aria-label="Next" disabled>
+        <i class="bi bi-caret-right-fill"></i>
+      </button>
+    </div>
+
+    <!-- Footer -->
+    <footer id="footer-contact" class="footer-section">
+      <div class="container">
+        <div class="row py-5">
+          <div class="col-lg-6 mb-4 mb-lg-0">
+            <h5 class="text-white mb-3">Mohamed Ahmed Fekry</h5>
+            <p class="text-secondary mb-4">
+              Cybersecurity Engineer, Penetration Tester, Front-end Developer<br />UI/UX
+              Designer & GRC Specialist
+            </p>
+            <div class="footer-social d-flex gap-3">
+              <a href="https://www.linkedin.com/in/mohamed-ahmed-fekry" target="_blank" rel="noreferrer" class="footer-social-link">
+                <i class="bi bi-linkedin"></i>
+              </a>
+              <a href="mailto:mohamedahmedfekry2003@gmail.com" class="footer-social-link">
+                <i class="bi bi-envelope"></i>
+              </a>
+              <a href="tel:+201002113972" class="footer-social-link">
+                <i class="bi bi-telephone"></i>
+              </a>
+              <a href="https://github.com/" target="_blank" rel="noreferrer" class="footer-social-link">
+                <i class="bi bi-github"></i>
+              </a>
+            </div>
+          </div>
+          <div class="col-lg-3 mb-4 mb-lg-0">
+            <h6 class="text-white mb-3">Services</h6>
+            <ul class="footer-links list-unstyled">
+              <li><a href="#" class="text-secondary">Penetration Testing</a></li>
+              <li><a href="#" class="text-secondary">Network Security</a></li>
+              <li><a href="#" class="text-secondary">Front-end Development</a></li>
+              <li><a href="#" class="text-secondary">UI/UX Design</a></li>
+            </ul>
+          </div>
+          <div class="col-lg-3">
+            <h6 class="text-white mb-3">Contact</h6>
+            <ul class="footer-links list-unstyled">
+              <li class="text-secondary">+20 100 211 3972</li>
+              <li class="text-secondary">mohamedahmedfekry2003@gmail.com</li>
+              <li class="text-secondary">Giza, Egypt</li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-border"></div>
+        <div class="row py-3">
+          <div class="col-12 text-center">
+            <p class="text-secondary mb-0 small">
+              © <span id="year"></span> Mohamed Ahmed Fekry. All Rights Reserved.
+            </p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Bootstrap + JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="projects.js"></script>
+  </body>
+  </html>
+
+
